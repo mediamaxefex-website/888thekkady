@@ -1,48 +1,78 @@
-# 888 THEKKADY – Boutique Stay
+# 888 THEKKADY Website
 
-**Nature • Stay • Wellness**
+Static six-page website draft for 888 THEKKADY, a premium homestay in Kumily, Thekkady.
 
-Welcome to the official website project for **888 Thekkady Boutique Stay**, a hospitality destination in Kumily, Thekkady, Kerala, India.
+## Pages
 
-## About
+- `index.html` - Home
+- `stay.html` - Rooms and accommodation
+- `spa.html` - In-house spa and massage
+- `facilities.html` - Facilities, dining and activities
+- `explore.html` - Explore Thekkady and location
+- `contact.html` - Rates, contact and booking enquiry
 
-The website is designed to help guests discover the stay, explore facilities, view property photos, learn about nearby attractions, and contact the property for enquiries and bookings.
+## Preview
 
-## Website Goals
+Open `index.html` directly in a browser, or serve the folder with a simple static server.
 
-- Premium, modern and mobile-friendly guest experience
-- Fast-loading pages and optimized images
-- Search engine optimization for relevant Thekkady and Kumily accommodation searches
-- Clear room, facilities, gallery and contact information
-- Easy WhatsApp and phone enquiries
-- Accessible, semantic HTML and responsive layouts
+```powershell
+python -m http.server 8080
+```
 
-## Technology
+Then visit `http://localhost:8080/`.
 
-- HTML5
-- CSS3
-- Lightweight JavaScript
-- GitHub Pages hosting
-- Google Search Console and PageSpeed Insights for testing
+## Image Replacement
 
-## SEO & Performance
+Drop genuine property photos into:
 
-The project aims to follow Google Search Central best practices, including descriptive page titles, unique meta descriptions, canonical URLs, crawlable navigation, structured data where appropriate, sitemap.xml, robots.txt, image alt text, and Core Web Vitals optimization.
+- `assets/images/gallery/exterior/`
+- `assets/images/gallery/single-rooms/`
+- `assets/images/gallery/double-rooms/`
+- `assets/images/gallery/kitchen-restaurant/`
+- `assets/images/gallery/balconies/`
+- `assets/images/gallery/spa-massage/`
+- `assets/images/gallery/activities/`
 
-Performance and SEO scores will be measured after deployment. Scores and search rankings are not guaranteed.
+The current pages use clearly marked placeholders from `assets/images/placeholders/`.
 
-## Location
+## Editable Content
 
-Kumily, Thekkady, Idukki district, Kerala, India.
+Core contact details, room reference rates, spa draft menu and translations are in `assets/js/site.js`.
 
-## Project
+The existing supplied logo was copied to `assets/images/brand/thekkady-fern-logo.png`. Replace that file later when the final brand asset is ready.
 
-Repository: `888thekkady`
+## Deployment
 
-Website domain: `https://888thekkady.co.in/`
+This site is static and can be deployed to GitHub Pages, Netlify, Vercel or any standard web host. Upload the full folder while preserving relative paths.
 
-*The custom domain will be available after DNS configuration and domain status issues are resolved.*
+## Owner Approval Needed
 
----
+- Final logo and favicon.
+- Actual property photographs.
+- Pricing basis for room rates.
+- Final room rate terms, taxes, inclusions and cancellation policy if needed.
+- Actual in-house spa treatment menu and tariffs.
+- Any confirmed operational timings, dining details, campfire details or safari arrangement terms.
+- Activity/program wording, official booking links, operator availability and final prices for Gavi, Periyar, boating, trekking, jeep safari, elephant activity, plantation visits, Vagamon and Ramakkalmedu.
 
-**Powered by Max Efex Graphics**
+## Activity Image Notes
+
+Additional activity images were downloaded from Wikimedia Commons / Special:FilePath into `assets/images/gallery/activities/` for draft use:
+
+- `bamboo-rafting-periyar.webp`
+- `elephant-safari-thekkady.webp`
+- `jeep-safari-kerala.webp`
+- `plantation-visit-kerala.webp`
+- `thekkady-boat-service.webp`
+- `vagamon-hills.webp`
+- `ramakkalmedu.webp`
+
+Before public launch, confirm each image license/attribution requirement or replace with owner-approved photos.
+
+## Program Reference Links
+
+- Gavi-Kakki Eco Tourism: `https://www.gavikakkionline.com/`
+- Periyar Tiger Reserve programs: `https://www.periyartigerreserve.org/ProgramView`
+- KTDC boating: `https://www.ktdcboating.com/`
+- Kerala Tourism Vagamon: `https://www.keralatourism.org/destination/vagamon-idukki/324/`
+- Kerala Tourism Ramakkalmedu: `https://www.keralatourism.org/destination/ramakkalmedu-hill-stations-kerala/53/`

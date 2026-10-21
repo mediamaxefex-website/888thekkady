@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Gallery | 888 THEKKADY Boutique Stay</title>
+  <meta name="description" content="Explore photos of rooms, property, balconies, dining spaces, Ayurvedic spa and nearby experiences at 888 THEKKADY Boutique Stay in Kumily.">
+  <link rel="icon" href="assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/gallery.js"></script>
+</head>
+<body data-page="gallery">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="888 THEKKADY home">
+        <img src="assets/images/brand/thekkady-fern-logo.png" alt="" width="46" height="46">
+        <span><span class="brand-name" data-i18n="brand">888 THEKKADY</span><span class="brand-line" data-i18n="tagline">Your Private Escape in Thekkady.</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" data-i18n="navHome">Home</a></li>
+          <li><a href="stay.html" data-i18n="navStay">Stay</a></li>
+          <li><a href="spa.html" data-i18n="navSpa">Spa</a></li>
+          <li><a href="facilities.html" data-i18n="navFacilities">Facilities</a></li>
+          <li><a href="explore.html" data-i18n="navExplore">Explore</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ml">മ</button>
+          <button type="button" data-lang="ta">த</button>
+          <button type="button" data-lang="hi">हिं</button>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" data-i18n-aria="navToggle"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main" class="gallery-page">
+    <section class="gallery-intro">
+      <div class="container">
+        <span class="eyebrow">A closer look</span>
+        <h1>Photo Gallery</h1>
+        <p>Explore the rooms, spaces and experiences around your stay in Kumily, Thekkady.</p>
+      </div>
+    </section>
+    <section class="container gallery-section" aria-label="Property photo gallery">
+      <div class="gallery-filters" role="group" aria-label="Filter gallery photos">
+        <button class="gallery-filter is-active" type="button" data-filter="all" aria-pressed="true">All Photos</button>
+        <button class="gallery-filter" type="button" data-filter="exterior" aria-pressed="false">Property</button>
+        <button class="gallery-filter" type="button" data-filter="single-rooms" aria-pressed="false">Single Rooms</button>
+        <button class="gallery-filter" type="button" data-filter="double-rooms" aria-pressed="false">Double Rooms</button>
+        <button class="gallery-filter" type="button" data-filter="balconies" aria-pressed="false">Balconies</button>
+        <button class="gallery-filter" type="button" data-filter="kitchen-restaurant" aria-pressed="false">Kitchen & Dining</button>
+        <button class="gallery-filter" type="button" data-filter="spa-massage" aria-pressed="false">Spa & Massage</button>
+        <button class="gallery-filter" type="button" data-filter="activities" aria-pressed="false">Thekkady Experiences</button>
+      </div>
+      <p class="gallery-count" aria-live="polite"></p>
+      <div class="photo-grid" id="photo-grid"></div>
+    </section>
+    <section class="gallery-cta">
+      <div class="container">
+        <h2>Planning your stay?</h2>
+        <p>Contact us to ask about room availability and facilities.</p>
+        <a class="button" href="contact.html#booking">Make an Enquiry</a>
+      </div>
+    </section>
+  </main>
+  <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
+    <button class="lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+    <button class="lightbox-next" type="button" aria-label="Next photo">›</button>
+  </div>
+  <footer class="site-footer"><div class="footer-bottom">888 THEKKADY, Kumily, Thekkady, Kerala. <span class="footer-credit">Powered by <a href="https://maxefex.in" target="_blank" rel="noopener">Max Efex Graphics</a></span></div></footer>
+</body>
+</html>
