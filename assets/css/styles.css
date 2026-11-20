@@ -1,15 +1,16 @@
 :root {
-  --forest: #092d20;
-  --forest-2: #14583d;
-  --forest-3: #031d15;
-  --gold: #c89b3c;
-  --gold-2: #f0d487;
-  --ivory: #fff8e6;
-  --warm: #f4ead1;
-  --ink: #10291f;
-  --muted: #5d6d63;
-  --line: rgba(9, 45, 32, 0.16);
-  --shadow: 0 18px 52px rgba(9, 45, 32, 0.18);
+  --forest: #385144;
+  --sage: #e7eddf;
+  --sage-soft: #f1f4eb;
+  --gold: #ccaa60;
+  --gold-2: #f2dfaa;
+  --gold-ink: #795d28;
+  --ivory: #fffdf7;
+  --warm: #f6efdf;
+  --ink: #252d25;
+  --muted: #526053;
+  --line: rgba(56, 81, 68, 0.23);
+  --shadow: 0 18px 52px rgba(56, 81, 68, 0.12);
   --radius: 8px;
   --max: 1160px;
   color-scheme: light;
@@ -27,7 +28,7 @@ body {
   margin: 0;
   font-family: "Inter", "Noto Sans Malayalam", "Segoe UI", system-ui, sans-serif;
   color: var(--ink);
-  background: linear-gradient(180deg, #fff8e6 0%, #f4ead1 100%);
+  background: linear-gradient(180deg, var(--ivory), var(--warm));
   line-height: 1.6;
 }
 
@@ -52,8 +53,12 @@ textarea {
 }
 
 :focus-visible {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--gold-ink);
   outline-offset: 3px;
+}
+
+.hero :focus-visible {
+  outline-color: var(--gold-2);
 }
 
 .skip-link {
@@ -76,7 +81,7 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 80;
-  background: rgba(255, 248, 230, 0.95);
+  background: rgba(255, 253, 247, 0.96);
   border-bottom: 1px solid rgba(200, 155, 60, 0.32);
   backdrop-filter: blur(16px);
 }
@@ -216,7 +221,7 @@ textarea {
 
 .site-nav a[aria-current="page"],
 .site-nav a:hover {
-  background: rgba(202, 168, 95, 0.16);
+  background: var(--sage);
   color: var(--forest);
 }
 
@@ -247,8 +252,8 @@ textarea {
 }
 
 .lang-switch button[aria-pressed="true"] {
-  background: var(--forest);
-  color: white;
+  background: var(--sage);
+  color: var(--forest);
 }
 
 .hero {
@@ -266,7 +271,7 @@ textarea {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(3, 29, 21, 0.16), rgba(3, 29, 21, 0.88)),
+    linear-gradient(180deg, transparent 28%, rgba(32, 31, 24, 0.18) 51%, rgba(28, 29, 23, 0.74) 100%),
     url("../images/hero/thekkady-hero.webp") center / cover;
   z-index: -2;
 }
@@ -275,7 +280,7 @@ textarea {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(225, 201, 133, 0.2), transparent 32%);
+  background: linear-gradient(65deg, rgba(27, 29, 23, 0.34), transparent 68%);
   z-index: -1;
 }
 
@@ -285,15 +290,25 @@ textarea {
   padding: clamp(4rem, 10vh, 8rem) 0 4rem;
 }
 
+.hero h1,
+.hero .hero-copy,
+.hero .eyebrow {
+  text-shadow: 0 2px 12px rgba(22, 24, 18, 0.75), 0 1px 3px rgba(22, 24, 18, 0.9);
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--gold-2);
+  color: var(--gold-ink);
   font-size: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.13em;
+}
+
+.hero .eyebrow {
+  color: var(--gold-2);
 }
 
 .eyebrow::before {
@@ -333,11 +348,12 @@ p {
 .hero-copy,
 .lead {
   max-width: 720px;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
   font-size: clamp(1rem, 2.6vw, 1.25rem);
 }
 
 .hero-copy {
+  color: white;
   margin-top: 1.2rem;
 }
 
@@ -357,7 +373,7 @@ p {
   border-radius: var(--radius);
   border: 1px solid transparent;
   background: linear-gradient(135deg, var(--gold-2), var(--gold));
-  color: #071d15;
+  color: var(--ink);
   text-decoration: none;
   font-weight: 900;
   cursor: pointer;
@@ -370,8 +386,19 @@ p {
 }
 
 .button.secondary {
-  background: rgba(255, 248, 232, 0.12);
-  border-color: rgba(255, 248, 232, 0.48);
+  background: var(--sage);
+  border-color: var(--line);
+  color: var(--forest);
+}
+
+.hero .button.secondary {
+  background: var(--ivory);
+  border-color: var(--ivory);
+}
+
+.hero .button.ghost {
+  background: rgba(32, 35, 27, 0.62);
+  border-color: rgba(255, 253, 247, 0.65);
   color: white;
 }
 
@@ -386,14 +413,14 @@ p {
 }
 
 .section.alt {
-  background: linear-gradient(180deg, var(--warm), #ead9ae);
+  background: linear-gradient(180deg, var(--ivory), var(--warm));
 }
 
 .section.dark {
   background:
     radial-gradient(circle at 20% 10%, rgba(240, 212, 135, 0.16), transparent 34%),
-    linear-gradient(135deg, var(--forest-3), var(--forest));
-  color: white;
+    linear-gradient(135deg, var(--sage-soft), var(--sage));
+  color: var(--ink);
 }
 
 .section-head {
@@ -410,7 +437,7 @@ p {
 .dark .section-head p,
 .dark .muted,
 .dark .note {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
 }
 
 .grid {
@@ -433,8 +460,8 @@ p {
 }
 
 .dark .card {
-  background: rgba(255, 248, 232, 0.08);
-  border-color: rgba(255, 248, 232, 0.18);
+  background: var(--ivory);
+  border-color: var(--line);
 }
 
 .card-body {
@@ -492,16 +519,16 @@ p {
 }
 
 .dark .pill {
-  background: rgba(255, 248, 232, 0.1);
-  border-color: rgba(255, 248, 232, 0.18);
-  color: var(--ivory);
+  background: var(--ivory);
+  border-color: var(--line);
+  color: var(--forest);
 }
 
 .page-hero {
   background:
     radial-gradient(circle at 82% 16%, rgba(240, 212, 135, 0.2), transparent 28%),
-    linear-gradient(135deg, var(--forest-3), var(--forest));
-  color: white;
+    linear-gradient(135deg, var(--sage-soft), var(--sage));
+  color: var(--ink);
   padding: clamp(3.2rem, 8vw, 7rem) 0;
   position: relative;
   overflow: hidden;
@@ -524,7 +551,7 @@ p {
 .page-hero p {
   max-width: 760px;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
   font-size: 1.08rem;
 }
 
@@ -626,8 +653,9 @@ textarea {
 }
 
 .site-footer {
-  background: var(--forest-3);
-  color: white;
+  background: var(--sage);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
   padding: 3rem 0 1.2rem;
 }
 
@@ -639,7 +667,7 @@ textarea {
 .footer-grid p,
 .footer-grid a,
 .footer-bottom {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
 }
 
 .footer-links {
@@ -655,7 +683,7 @@ textarea {
   width: min(var(--max), calc(100% - 32px));
   margin: 2rem auto 0;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid var(--line);
   font-size: 0.9rem;
 }
 
