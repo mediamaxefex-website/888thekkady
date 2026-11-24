@@ -545,6 +545,19 @@ function renderDynamic() {
   revealVisible();
 }
 
+function trackEnquiry(service, method) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", `${service}_enquiry_attempt`, { contact_method: method });
+  }
+}
+
+function trackEnquiryLink(event) {
+  const topic = event.target.closest("a[data-whatsapp]")?.dataset.whatsapp;
+  if (topic === "general" || topic === "spa") {
+    trackEnquiry(topic === "spa" ? "spa" : "room", "whatsapp");
+  }
+}
+
 function setupBookingForm() {
   const form = document.querySelector("#booking-form");
   if (!form) return;
@@ -586,6 +599,10 @@ function setupBookingForm() {
       `Message: ${data.get("message") || "No additional message"}`,
       "Please confirm final availability and rate details."
     ].join("\n");
+    trackEnquiry("room", "whatsapp_form");
+    if (form.querySelector('[data-i18n="spaYes"]').selected) {
+      trackEnquiry("spa", "whatsapp_form");
+    }
     window.open(waUrl(message), "_blank", "noopener");
     status.textContent = t("formReady");
     status.className = "success";
@@ -633,4 +650,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   setLanguage(getLang());
   setupBookingForm();
+  document.addEventListener("click", trackEnquiryLink);
 });
